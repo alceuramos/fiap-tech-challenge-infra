@@ -26,13 +26,12 @@ jobs:
         run: terraform init
         working-directory: ./terraform
 
-      # - name: Terraform validate
-      #   run: terraform validate
-      #   working-directory: ./terraform
+      - name: Terraform validate
+        run: terraform validate
+        working-directory: ./terraform
 
       - name: Terraform plan
         run: terraform plan
-        if: github.event_name == 'pull_request' && github.ref == 'refs/heads/main'
         working-directory: ./terraform
 
       - name: Terraform apply
