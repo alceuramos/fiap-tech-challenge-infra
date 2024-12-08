@@ -31,11 +31,11 @@ jobs:
         working-directory: ./terraform
 
       - name: Terraform plan
-        run: terraform plan
+        run: terraform plan -out tfplan
         working-directory: ./terraform
 
       - name: Terraform apply
-        run: terraform apply -auto-approve
+        run: terraform apply tfplan -auto-approve
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         working-directory: ./terraform
 
