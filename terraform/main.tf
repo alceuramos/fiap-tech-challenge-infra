@@ -12,4 +12,7 @@ provider "aws" {
 
 resource "aws_s3_bucket" "hello_world_bucket" {
   bucket = "hello-world-bucket-1234567890"
+  lifecycle {
+    ignore_changes = all
+  }
 }
