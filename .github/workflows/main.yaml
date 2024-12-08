@@ -24,7 +24,6 @@ jobs:
 
       - name: Terraform init
         run: terraform init
-        if: github.event_name == 'pull_request' && github.ref == 'refs/heads/main'
         working-directory: ./terraform
 
       # - name: Terraform validate
